@@ -1,0 +1,34 @@
+name: Run Playwright Tests and Upload Report
+
+on:
+  push:
+    branches:
+      - main  # Runs the workflow when code is pushed to the 'main' branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set Up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Install Playwright Browsers
+        run: mvn exec:java -Dexec.mainClass="com.microsoft.playwright.CLI" -Dexec.args="install"
+
+      - name: Run Tests
+        run: mvn clean test
+
+      - name: Commit and Push Extent Report
+        run: |
+          git config --global user.email "adjayamk@gmail.com"
+          git config --global user.name "GitHub Actions"
+          git add target/ExtentReport.html
+          git commit -m "Updated Extent Report"
+          git push origin main
