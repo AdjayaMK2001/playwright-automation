@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-09T15:30:21 IST" name="Default suite" finished-at="2025-03-09T15:30:42 IST" duration-ms="20260">
+  <suite started-at="2025-03-09T16:20:05 IST" name="Default suite" finished-at="2025-03-09T16:20:22 IST" duration-ms="16975">
     <groups>
     </groups>
-    <test started-at="2025-03-09T15:30:21 IST" name="Default test" finished-at="2025-03-09T15:30:42 IST" duration-ms="20260">
+    <test started-at="2025-03-09T16:20:05 IST" name="Default test" finished-at="2025-03-09T16:20:22 IST" duration-ms="16975">
       <class name="test.TestClass">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.TestClass@bae7dc0]" started-at="2025-03-09T15:30:05 IST" name="setUp" finished-at="2025-03-09T15:30:21 IST" duration-ms="16720" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.TestClass@342c38f8]" started-at="2025-03-09T16:19:50 IST" name="setUp" finished-at="2025-03-09T16:20:05 IST" duration-ms="15589" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="browserOpen()[pri:0, instance:test.TestClass@bae7dc0]" started-at="2025-03-09T15:30:21 IST" name="browserOpen" finished-at="2025-03-09T15:30:22 IST" duration-ms="718" status="PASS">
+        <test-method signature="browserOpen()[pri:0, instance:test.TestClass@342c38f8]" started-at="2025-03-09T16:20:05 IST" name="browserOpen" finished-at="2025-03-09T16:20:06 IST" duration-ms="457" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserOpen -->
-        <test-method signature="invalidLoginCredential()[pri:1, instance:test.TestClass@bae7dc0]" started-at="2025-03-09T15:30:22 IST" name="invalidLoginCredential" finished-at="2025-03-09T15:30:36 IST" duration-ms="13828" status="PASS">
+        <test-method signature="invalidLoginCredential()[pri:1, instance:test.TestClass@342c38f8]" started-at="2025-03-09T16:20:06 IST" name="invalidLoginCredential" finished-at="2025-03-09T16:20:18 IST" duration-ms="11983" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginCredential -->
-        <test-method signature="validLoginCredential()[pri:2, instance:test.TestClass@bae7dc0]" started-at="2025-03-09T15:30:36 IST" name="validLoginCredential" finished-at="2025-03-09T15:30:41 IST" duration-ms="4879" status="PASS">
+        <test-method signature="validLoginCredential()[pri:2, instance:test.TestClass@342c38f8]" started-at="2025-03-09T16:20:18 IST" name="validLoginCredential" finished-at="2025-03-09T16:20:22 IST" duration-ms="3806" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginCredential -->
-        <test-method signature="closeReport()[pri:3, instance:test.TestClass@bae7dc0]" started-at="2025-03-09T15:30:41 IST" name="closeReport" finished-at="2025-03-09T15:30:42 IST" duration-ms="722" status="PASS">
+        <test-method signature="closeReport()[pri:3, instance:test.TestClass@342c38f8]" started-at="2025-03-09T16:20:22 IST" name="closeReport" finished-at="2025-03-09T16:20:22 IST" duration-ms="541" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeReport -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.TestClass@bae7dc0]" started-at="2025-03-09T15:30:42 IST" name="tearDown" finished-at="2025-03-09T15:30:42 IST" duration-ms="479" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.TestClass@342c38f8]" started-at="2025-03-09T16:20:22 IST" name="tearDown" finished-at="2025-03-09T16:20:23 IST" duration-ms="837" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
