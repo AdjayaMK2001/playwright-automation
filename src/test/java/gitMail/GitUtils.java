@@ -20,7 +20,7 @@ public class GitUtils {
         // Wait for the process to complete
         process.waitFor();
  
-        return commitHash;  // Return the commit hash
+        return commitHash;  
     }
  
 }

@@ -4,6 +4,10 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.microsoft.playwright.*;
 
+import gitMail.GitAutomation;
+
+import java.io.IOException;
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -26,8 +30,9 @@ public class BaseTest {
     }
 
     @AfterSuite
-    public void tearDown() {
-    	
+    public void tearDown() throws IOException, InterruptedException {
+    	GitAutomation gitautomation=new GitAutomation();
+    	gitautomation.commitAndPushExtentReport();
     	
        if (browser != null) {
             browser.close();
