@@ -1,9 +1,10 @@
 package gitMail;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 
 public class GitAutomation {
-	   public static void commitAndPushExtentReport() throws IOException, InterruptedException {
+	   public static void commitAndPushExtentReport() throws Exception {
 	    	// Navigate to the root of your Git project directory
 	    	String repoPath = "D:/logicPrograms/GithubTask";  
 	    	String extentReportPath = repoPath + "/extent-report/extent-report.html";  
@@ -19,7 +20,7 @@ public class GitAutomation {
 	        executeGitCommand(gitCommitCommand, repoPath);
 	        executeGitCommand(gitPushCommand, repoPath);
 	        
-	        GitCommitEmail.gitCommit();
+	        EmailUtility.sendEmail("Report", Paths.get("extent-report/extent-report.html").toAbsolutePath().toString());
 	    }
 	 
 	    private static void executeGitCommand(String[] command, String workingDir) throws IOException, InterruptedException {

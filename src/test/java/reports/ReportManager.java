@@ -10,15 +10,19 @@ import java.util.Date;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.microsoft.playwright.Page;
+
+import test.FilePaths;
 
 public class ReportManager {
 	 private static ExtentReports extent;
 	    private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
 	    private static ThreadLocal<ExtentTest> suite = new ThreadLocal<>();
-
-	  /*  public static ExtentReports getReportInstance() {
+	    
+	    public static ExtentReports getReportInstance() {
 	        if (extent == null) {
 	            // Generate timestamp for the report filename
 	                        
@@ -45,13 +49,7 @@ public class ReportManager {
 	        }
 	        return extent;
 	    }
-*/
-	    public static ExtentReports getReportInstance() {
-	    	ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extent-report/extent-report.html");
-	        extent = new ExtentReports();
-	        extent.attachReporter(htmlReporter);
-	        return extent;
-	    }
+
 	    // Create or get the test suite
 	    public static ExtentTest createTestSuite(String suiteName, String description) {
 	        ExtentTest extentSuite = getReportInstance().createTest(suiteName, description);
@@ -89,7 +87,7 @@ public class ReportManager {
 	    // Log steps with screenshots
 	    public static void logStepWithScreenshot(Page page, String stepDescription,Status status) {
 	        try {
-	        	String screenshotPath = Paths.get("AutomationReports_Result/Screenshots/Step_" 
+	        	String screenshotPath = Paths.get("extent-report/Screenshots/Step_" 
 	                    + new SimpleDateFormat("yyyyMMdd_HHmmssSSS").format(new Date()) + ".png").toAbsolutePath().toString();
 
 	                      page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get(screenshotPath)));

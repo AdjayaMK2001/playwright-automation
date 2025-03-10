@@ -1,5 +1,6 @@
 package test;
 
+import java.nio.file.Paths;
 import java.util.Map;
 
 import org.testng.Assert;
@@ -29,6 +30,7 @@ public class TestClass extends BaseTest {
 	
 	 @Test(priority = 0)
 	 public void browserOpen() {
+	        FileUtils.clearFolder(Paths.get("extent-report").toAbsolutePath().toString());
 			boolean isbrowser;
 			reportManager = new ReportManager();
 			reportManager.createTestSuite("TestSuite_03 Login Page Test",

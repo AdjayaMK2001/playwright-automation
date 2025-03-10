@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-10T11:13:17 IST" name="Suite" finished-at="2025-03-10T11:13:28 IST" duration-ms="10226">
+  <suite started-at="2025-03-10T18:38:43 IST" name="Default suite" finished-at="2025-03-10T18:38:59 IST" duration-ms="15234">
     <groups>
     </groups>
-    <test started-at="2025-03-10T11:13:17 IST" name="Test" finished-at="2025-03-10T11:13:28 IST" duration-ms="10226">
+    <test started-at="2025-03-10T18:38:43 IST" name="Default test" finished-at="2025-03-10T18:38:59 IST" duration-ms="15234">
       <class name="test.TestClass">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.TestClass@c88a337]" started-at="2025-03-10T11:13:07 IST" name="setUp" finished-at="2025-03-10T11:13:17 IST" duration-ms="10198" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.TestClass@33ecda92]" started-at="2025-03-10T18:38:24 IST" name="setUp" finished-at="2025-03-10T18:38:43 IST" duration-ms="19030" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="browserOpen()[pri:0, instance:test.TestClass@c88a337]" started-at="2025-03-10T11:13:17 IST" name="browserOpen" finished-at="2025-03-10T11:13:18 IST" duration-ms="504" status="PASS">
+        <test-method signature="browserOpen()[pri:0, instance:test.TestClass@33ecda92]" started-at="2025-03-10T18:38:43 IST" name="browserOpen" finished-at="2025-03-10T18:38:44 IST" duration-ms="671" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserOpen -->
-        <test-method signature="invalidLoginCredential()[pri:1, instance:test.TestClass@c88a337]" started-at="2025-03-10T11:13:18 IST" name="invalidLoginCredential" finished-at="2025-03-10T11:13:25 IST" duration-ms="6771" status="PASS">
+        <test-method signature="invalidLoginCredential()[pri:1, instance:test.TestClass@33ecda92]" started-at="2025-03-10T18:38:44 IST" name="invalidLoginCredential" finished-at="2025-03-10T18:38:54 IST" duration-ms="9986" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidLoginCredential -->
-        <test-method signature="validLoginCredential()[pri:2, instance:test.TestClass@c88a337]" started-at="2025-03-10T11:13:25 IST" name="validLoginCredential" finished-at="2025-03-10T11:13:27 IST" duration-ms="2497" status="PASS">
+        <test-method signature="validLoginCredential()[pri:2, instance:test.TestClass@33ecda92]" started-at="2025-03-10T18:38:54 IST" name="validLoginCredential" finished-at="2025-03-10T18:38:58 IST" duration-ms="3631" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginCredential -->
-        <test-method signature="closeReport()[pri:3, instance:test.TestClass@c88a337]" started-at="2025-03-10T11:13:27 IST" name="closeReport" finished-at="2025-03-10T11:13:28 IST" duration-ms="350" status="PASS">
+        <test-method signature="closeReport()[pri:3, instance:test.TestClass@33ecda92]" started-at="2025-03-10T18:38:58 IST" name="closeReport" finished-at="2025-03-10T18:38:59 IST" duration-ms="837" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeReport -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.TestClass@c88a337]" started-at="2025-03-10T11:13:28 IST" name="tearDown" finished-at="2025-03-10T11:13:43 IST" duration-ms="15683" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.TestClass@33ecda92]" started-at="2025-03-10T18:38:59 IST" name="tearDown" finished-at="2025-03-10T18:39:11 IST" duration-ms="12166" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- test.TestClass -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -6,8 +6,6 @@ import com.microsoft.playwright.*;
 
 import gitMail.GitAutomation;
 
-import java.io.IOException;
-
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -30,15 +28,16 @@ public class BaseTest {
     }
 
     @AfterSuite
-    public void tearDown() throws IOException, InterruptedException {
+    public void tearDown() throws Exception {
+    	  if (browser != null) {
+              browser.close();
+          }
+          if (playwright != null) {
+              playwright.close();
+          }
     	GitAutomation gitautomation=new GitAutomation();
     	gitautomation.commitAndPushExtentReport();
     	
-       if (browser != null) {
-            browser.close();
-        }
-        if (playwright != null) {
-            playwright.close();
-        }
+     
     }
 }
