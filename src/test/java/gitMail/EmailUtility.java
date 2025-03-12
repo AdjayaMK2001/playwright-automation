@@ -19,69 +19,54 @@ import javax.mail.internet.MimeMultipart;
 import test.FilePaths;
 
 public class EmailUtility {
-	public static void sendEmail(String reportName, String reportPath) throws Exception {
-        // Set email properties
-        Properties properties = new Properties();
-        properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.port", "587");
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.starttls.enable", "true");
- 
-        // Set your email and password 
-        final String username = "ammu81748@gmail.com";  
-        final String password = "zghx gbyt gyet wbay";   
- 
-        // Create session with authentication
-        Session session = Session.getInstance(properties, new Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(username, password);
-            }
-        });
-       
-        // Compose the message
-        MimeMessage message = new MimeMessage(session);
-        message.setFrom(new InternetAddress(username));
-        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("demo72986@gmail.com"));
-        message.setSubject("Extent Report Commit URL");
+	
+	    public static void sendEmailWithReportLink(String toEmail, String subject, String reportUrl) {
+	        String fromEmail = "ammu81748@gmail.com";  // Sender's email
+	        String password = "zghx gbyt gyet wbay";    // Use app-specific password if 2FA is enabled
 
-        MimeMultipart multipart = new MimeMultipart();
-        MimeBodyPart textPart = new MimeBodyPart();
-        
-        String repoPath = "D:/logicPrograms/GithubTask";  // Replace with your Git repository path
-        String commitHash = GitUtils.getLatestCommitHash(repoPath);
-        String commitUrl = "https://github.com/AdjayaMK2001/playwright-automation/commit/" + commitHash;
+	        // Mail server properties
+	        Properties properties = new Properties();
+	        properties.put("mail.smtp.host", "smtp.gmail.com");
+	        properties.put("mail.smtp.port", "587");
+	        properties.put("mail.smtp.auth", "true");
+	        properties.put("mail.smtp.starttls.enable", "true");
 
-        textPart.setText("Hi,\n\nThe Extent Report has been committed. You can view the commit here: " + commitUrl);
-        String reportUrl = "https://AdjayaMK2001/playwright-automation/extent-report/extent-report.html"; // Replace with actual hosted link
+	        // Create a session
+	        Session session = Session.getInstance(properties, new Authenticator() {
+	            protected PasswordAuthentication getPasswordAuthentication() {
+	                return new PasswordAuthentication(fromEmail, password);
+	            }
+	        });
 
-        textPart.setContent(
-            "<h3>Hi,</h3>" +
-            "<p>The Extent Report is ready. You can view it here:</p>" +
-            "<p><a href='" + reportUrl + "' target='_blank'>Open Report</a></p>" +
-            "<p>Best regards,<br>Earn Next</p>",
-            "text/html"
-        );
+	        try {
+	            // Create email message
+	            MimeMessage message = new MimeMessage(session);
+	            message.setFrom(new InternetAddress(fromEmail));
+	            message.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
+	            message.setSubject(subject);
 
-        
-        multipart.addBodyPart(textPart);
+	            // **Email Body with Report URL**
+	            String htmlBody = "<html><body>"
+	                    + "<p>Hi,</p>"
+	                    + "<p>The test execution report is available. Click the link below to view it:</p>"
+	                    + "<p><a href='" + reportUrl + "' target='_blank'>" + reportUrl + "</a></p>"
+	                    + "<p>Best Regards,</p>"
+	                    + "<p>Your Automation Team</p>"
+	                    + "</body></html>";
 
-        // Attach the HTML report file to the email
-        File reportFile = new File(reportPath);
-        if (reportFile.exists()) {
-            MimeBodyPart attachmentPart = new MimeBodyPart();
-            DataSource source = new FileDataSource(reportFile);
-            attachmentPart.setDataHandler(new DataHandler(source));
-            attachmentPart.setFileName(reportFile.getName());
-            multipart.addBodyPart(attachmentPart);
-        } else {
-            System.err.println("Report file not found: " + reportFile.getAbsolutePath());
-        }
+	            // Set the email content
+	            message.setContent(htmlBody, "text/html; charset=UTF-8");
 
-        message.setContent(multipart);
+	            // Send the email
+	            Transport.send(message);
+	            System.out.println("Email sent successfully with report link!");
 
-        // Send the email
-        Transport.send(message);
-        System.out.println("Email sent!");
-    }
-    
-}
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
+
+	   
+	}
+
+

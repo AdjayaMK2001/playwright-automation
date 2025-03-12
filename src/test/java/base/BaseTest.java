@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.microsoft.playwright.*;
 
+import gitMail.EmailUtility;
 import gitMail.GitAutomation;
 
 import org.testng.annotations.AfterClass;
@@ -35,8 +36,15 @@ public class BaseTest {
           if (playwright != null) {
               playwright.close();
           }
-    	GitAutomation gitautomation=new GitAutomation();
-    	gitautomation.commitAndPushExtentReport();
+          
+          GitAutomation git=new GitAutomation();
+          git.commitAndPushExtentReport();
+          	String reportUrl = "https://AdjayaMK2001.github.io/playwright-automation/extent-report.html"; 
+	        String toEmail = "demo72986@gmail.com";
+	        String subject = "Test Execution Report";
+
+	        EmailUtility emailsend=new EmailUtility();
+	       emailsend.sendEmailWithReportLink(toEmail, subject, reportUrl);
     	
      
     }

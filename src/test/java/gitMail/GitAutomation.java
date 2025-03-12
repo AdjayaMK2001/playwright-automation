@@ -7,20 +7,20 @@ public class GitAutomation {
 	   public static void commitAndPushExtentReport() throws Exception {
 	    	// Navigate to the root of your Git project directory
 	    	String repoPath = "D:/logicPrograms/GithubTask";  
-	    	String extentReportPath = repoPath + "/extent-report/extent-report.html";  
+	    	String extentReportPath = repoPath + "/docs/extent-report.html";  
 	 
 	 
 	        // Git commit and push commands
 	        String[] gitAddCommand = {"git", "add", extentReportPath};
 	        String[] gitCommitCommand = {"git", "commit", "-m", "\"Update Extent Report\""};
-	        String[] gitPushCommand = {"git", "push", "origin", "main"};  
+	        String[] gitPushCommand = {"git", "push", "origin", "task1"};  
 	 
 	        // Execute the git commands
 	        executeGitCommand(gitAddCommand, repoPath);
 	        executeGitCommand(gitCommitCommand, repoPath);
 	        executeGitCommand(gitPushCommand, repoPath);
 	        
-	        EmailUtility.sendEmail("Report", Paths.get("extent-report/extent-report.html").toAbsolutePath().toString());
+	       // EmailUtility.sendEmail("Report", Paths.get("extent-report/extent-report.html").toAbsolutePath().toString());
 	    }
 	 
 	    private static void executeGitCommand(String[] command, String workingDir) throws IOException, InterruptedException {
